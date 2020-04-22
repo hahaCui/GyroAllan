@@ -6,7 +6,8 @@ endLogInc = log10(maxN);
 m = unique(ceil(logspace(0,endLogInc,pts)))';    % create log spaced vector average factor
 t0 = 1/fs;                                       % t0 = sample interval
 T = m*t0;                                        % T = length of time for each cluster
-theta = cumsum(omega)/fs;       % integration of samples over time to obtain output angle ¦È
+theta = cumsum(omega)/fs;       % integration of samples over time to obtain output angle Â¦Ãˆ
+size(theta)
 sigma2 = zeros(length(T),M);    % array of dimensions (cluster periods) X (#variables)
 for i=1:length(m)               % loop over the various cluster sizes
     for k=1:N-2*m(i)            % implements the summation in the AV equation
